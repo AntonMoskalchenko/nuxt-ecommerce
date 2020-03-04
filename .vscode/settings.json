@@ -1,0 +1,39 @@
+{
+  // "vetur.validation.style": false,
+  "vetur.colorDecorators.enable": true,
+  "javascript.format.enable": false,
+  "eslint.enable": true,
+  // "eslint.validate": ["javascript", "javascriptreact", "html", "vue"],
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+  ],
+  "vetur.validation.template": false,
+  "prettier.singleQuote": true,
+  "prettier.semi": false,
+  "prettier.eslintIntegration": true,
+  "prettier.bracketSpacing": true,
+  "vetur.format.defaultFormatter": {
+    "html": "none",
+    "css": "prettier",
+    "postcss": "prettier",
+    "scss": "prettier",
+    "less": "prettier",
+    "js": "prettier",
+    "ts": "prettier",
+    "stylus": "stylus-supremacy"
+  },
+  "vetur.format.defaultFormatter.css": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.defaultFormatter.postcss": "prettier",
+  "eslint.autoFixOnSave": true,
+  "html-css-class-completion.includeGlobPattern": "**/*.{css,html,vue}",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "git.ignoreLimitWarning": true,
+}
