@@ -42,7 +42,15 @@ const categories = [
     products: []
   }
 ]
-function addProductsToCategory (products, category) {
+function getProduct (products, productsImages, productSlug) {
+  const innerProduct = products.find(p => p.pSlug === productSlug)
+  if (!innerProduct) return null
+  return {
+    ...innerProduct,
+    images: productsImages.find(img => img.id === innerProduct.id).urls
+  }
+}
+function addProductsToCategory (products, productsImages, category) {
   const categoryInner = { ...category, products: [] }
   products.map(p => {
     if (p.category_id === category.id) {
@@ -51,7 +59,7 @@ function addProductsToCategory (products, category) {
         pName: p.pName,
         pSlug: p.pSlug,
         pPrice: p.pPrice,
-        image: `https://source.unsplash.com/300x300/?${p.pName}`
+        image: productsImages.find(img => img.id === p.id).urls
       })
     }
   })
@@ -84,10 +92,30 @@ export const actions = {
     }
   },
   async getCurrentCategory ({ commit }, { route }) {
-    await sleep(1000)
+    await sleep(300)
     const category = categories.find((cat) => cat.cSlug === route.params.CategorySlug)
-    const products = await this.$axios.$get('/mock/products.json')
 
-    await commit('SET_CURRENT_CATEGORY', addProductsToCategory(products, category))
+    const [products, productsImages] = await Promise.all(
+      [
+        await this.$axios.$get('/mock/products.json'),
+        await this.$axios.$get('/mock/products-images.json')
+      ]
+    )
+
+    await commit('SET_CURRENT_CATEGORY', addProductsToCategory(products, productsImages, category))
+  },
+  async getCurrentProduct ({ commit }, { route }) {
+    await sleep(300)
+    const productSlug = route.params.ProductSlug
+
+    const [products, productsImages] = await Promise.all(
+      [
+        await this.$axios.$get('/mock/products.json'),
+        await this.$axios.$get('/mock/products-images.json')
+      ]
+    )
+
+    await commit('SET_CURRENT_PRODUCT', getProduct(products, productsImages, productSlug))
   }
+
 }

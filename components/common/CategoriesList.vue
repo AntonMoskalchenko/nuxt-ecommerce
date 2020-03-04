@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style lang="scss" module>
+
 .wrapper {
   display: flex;
 }

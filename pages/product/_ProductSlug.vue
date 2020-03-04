@@ -1,7 +1,21 @@
 <template>
-  <div>
-    <h1>{{ category.pName }}</h1>
-    <p>{{ category.pDesc }}</p>
+  <div :class="$style.page">
+    <div :class="$style.topBlock">
+      <div :class="$style.topLeftBlock">
+        <a :href="product.images.imgXL" target="_blank">
+          <img
+            v-lazy="product.images.imgL"
+            :class="$style.image"
+          />
+        </a>
+      </div>
+      <div :class="$style.topRightBlock">
+        <h1>{{ product.pName }}</h1>
+        <p>Цена: {{ product.pPrice }}</p>
+      </div>
+    </div>
+    <h2>Описание</h2>
+    <p>{{ product.pDesc }}</p>
   </div>
 </template>
 
@@ -21,7 +35,7 @@ export default {
   },
   computed: {
     ...mapState({
-      category: 'currentProduct'
+      product: 'currentProduct'
     })
   },
   head () {
@@ -31,10 +45,31 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.category.pMetaDescription
+          content: this.product.pMetaDescription
         }
       ]
     }
   }
 }
 </script>
+<style lang="scss" module>
+.page {
+  @include globalWrapper;
+}
+.image {
+  width: 400px;
+  height: auto;
+}
+.topBlock {
+  padding-top: 2em;
+  display: flex;
+  .topLeftBlock {
+    display: flex;
+  }
+  .topRightBlock {
+    padding-left: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+}
+</style>

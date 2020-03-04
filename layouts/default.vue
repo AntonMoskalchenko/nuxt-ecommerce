@@ -1,26 +1,21 @@
 <template>
-  <div :class="$style.mainWrapper">
-    <nuxt />
+  <div>
+    <div>
+      <Header />
+    </div>
+    <div>
+      <nuxt />
+    </div>
   </div>
 </template>
 
 <script>
-// // import GlassesTransform from '~~/components/banners/GlassesTransform.vue'
-// import Breadcrumbs from '~~/components/common/Breadcrumbs.vue'
-// import Header from '~~/components/common/Header/Header.vue'
-// import Footer from '~~/components/common/Footer.vue'
-// import CommonComponents from '~~/components/common/CommonComponents.vue'
-// // import SvgGift from '~~/assets/svg/gift.svg?inline'
-// // import RetailerModeSwitch from '~~/components/common/RetailerModeSwitch.vue'
-// import vueMainPlugins from '~~/plugins/ssr-main-plugins.js'
-// import Vue from 'vue'
+import Header from '~~/components/common/Header.vue'
 
 export default {
-//   components: {
-//     Header,
-//     Footer,
-//     CommonComponents
-//   },
+  components: {
+    Header
+  },
   computed: {
     meta () {
       return [
@@ -58,7 +53,6 @@ export default {
 </script>
 <style lang="scss" module>
 .mainWrapper {
-  max-width: 960px;
-  margin: 0 auto;
+
 }
 </style>

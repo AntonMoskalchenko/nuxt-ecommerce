@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="$style.page">
     <h1>Интернет-магазин "Хвостики"</h1>
     <CategoriesList :categories="categories" />
   </div>
@@ -30,3 +30,8 @@ export default {
   }
 }
 </script>
+<style lang="scss" module>
+.page {
+  @include globalWrapper;
+}
+</style>

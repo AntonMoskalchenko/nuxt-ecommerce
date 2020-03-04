@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div :class="$style.page">
     <h1>{{ category.cName }}</h1>
-    <p>{{ category.cDesc }}</p>
     <div :class="$style.productList">
       <div
         v-for="product in category.products"
@@ -10,6 +9,7 @@
         <ProductBrief :product="product" />
       </div>
     </div>
+    <p>{{ category.cDesc }}</p>
   </div>
 </template>
 
@@ -51,6 +51,9 @@ export default {
 }
 </script>
 <style lang="scss" module>
+.page {
+  @include globalWrapper;
+}
 .productList {
   display: flex;
   flex-wrap: wrap;

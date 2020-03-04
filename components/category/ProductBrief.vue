@@ -3,7 +3,7 @@
     <nuxt-link :to="`/product/${product.pSlug}`">
       <p>{{ product.pName }}</p>
       <img
-        v-lazy="product.image"
+        v-lazy="product.image.imgL"
         :class="$style.image"
       />
     </nuxt-link>
@@ -26,6 +26,11 @@ export default {
 .wrapper {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2em;
+  p {
+        max-width: 270px;
+    height: 35px;
+  }
 }
 .image {
   width: 300px;
