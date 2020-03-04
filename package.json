@@ -7,7 +7,7 @@
     "build": "cross-env NODE_ENV=production nuxt build",
     "buildandstart": "cross-env NODE_ENV=production nuxt build && cross-env NODE_ENV=production nuxt start",
     "dev": "cross-env NODE_ENV=development NUXT_PORT=3000 nuxt",
-    "start": "cross-env NODE_ENV=production NUXT_HOST=0.0.0.0 NUXT_PORT=80 nuxt start"
+    "start": "cross-env NODE_ENV=production nuxt start"
   },
   "dependencies": {
     "@nuxtjs/axios": "5.9.5",
