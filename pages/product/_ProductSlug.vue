@@ -12,6 +12,7 @@
       <div :class="$style.topRightBlock">
         <h1>{{ product.pName }}</h1>
         <p>Цена: {{ product.pPrice }}</p>
+        <BuyButton :product="product" />
       </div>
     </div>
     <h2>Описание</h2>
@@ -20,8 +21,12 @@
 </template>
 
 <script>
+import BuyButton from '~~/components/common/BuyButton'
 import { mapState } from 'vuex'
 export default {
+  components: {
+    BuyButton
+  },
   async asyncData ({ app, params, route, error }) {
     try {
       await app.store.dispatch('getCurrentProduct', { route })
@@ -59,6 +64,8 @@ export default {
 .image {
   width: 400px;
   height: auto;
+  max-height: 300px;
+  object-fit: cover;
 }
 .topBlock {
   padding-top: 2em;

@@ -27,7 +27,7 @@ module.exports = {
     // '~~/serverMiddleware/headers'
   ],
   router: {
-    // middleware: ['checkIsMobile'],
+    middleware: ['resetBreacrumbs'],
     prefetchLinks: false
   },
   loading: { color: '#ddd' },
@@ -49,7 +49,13 @@ module.exports = {
     'nuxt-webfontloader',
     // '@nuxtjs/svg',
     'cookie-universal-nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['nuxt-vuex-localstorage', {
+      ...(isDev && {
+        mode: 'debug'
+      }),
+      localStorage: ['cart'] //  If not entered, “localStorage” is the default value
+    }]
   ],
 
   webfontloader: {

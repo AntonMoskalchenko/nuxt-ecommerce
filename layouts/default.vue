@@ -4,6 +4,7 @@
       <Header />
     </div>
     <div>
+      <Breadcrumbs />
       <nuxt />
     </div>
   </div>
@@ -11,10 +12,12 @@
 
 <script>
 import Header from '~~/components/common/Header.vue'
+import Breadcrumbs from '~~/components/common/Breadcrumbs.vue'
 
 export default {
   components: {
-    Header
+    Header,
+    Breadcrumbs
   },
   computed: {
     meta () {

@@ -33,7 +33,7 @@ async function getImagesUrls () {
   const imagesUrl = []
   await Promise.all(
     products.map(async product => {
-      const productName = product.pName
+      const productName = product.pName.split(' ')[0]
       const imgUrls = await fetchApiImg(productName)
       imagesUrl.push({ id: product.id, urls: imgUrls })
     })
