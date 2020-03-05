@@ -30,15 +30,21 @@ async function fetchApiImg (searchQuery) {
   }
 }
 async function getImagesUrls () {
-  const imagesUrl = []
-  await Promise.all(
-    products.map(async product => {
+  let imagesUrlWithId =
+    products.map(product => {
       const productName = product.pName.split(' ')[0]
-      const imgUrls = await fetchApiImg(productName)
-      imagesUrl.push({ id: product.id, urls: imgUrls })
+      const urls = fetchApiImg(productName)
+      return { id: product.id, urls }
     })
+  const imagesUrls = await Promise.all(imagesUrlWithId.map(iu => iu.urls))
+  imagesUrlWithId = imagesUrlWithId.map((ob, index) => {
+    return {
+      id: ob.id,
+      urls: imagesUrls[index]
+    }
+  }
   )
-  return imagesUrl
+  return imagesUrlWithId
 }
 async function main () {
   try {
