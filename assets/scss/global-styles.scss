@@ -28,3 +28,96 @@ p {
   margin: .4em 0;
   padding: 0;
 }
+
+
+.button {
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1.25rem;
+  height: 2.25em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  position: relative;
+  vertical-align: top;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  cursor: pointer;
+  justify-content: center;
+  padding: calc(.375em - 1px) .75em;
+  text-align: center;
+  white-space: nowrap;
+  outline: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.is-fullwidth {
+    display: flex;
+    width: 100%;
+  }
+
+
+
+  &.color-grey {
+    background-color: grey;
+    box-shadow: inset 0 0 0 1px #ebebeb;
+    color: #000;
+
+    &.is-disabled {
+      cursor: not-allowed;
+      background-color: desaturate(lighten(grey, 24%), 40%)
+    }
+
+    &:hover {
+      background-color: lighten(grey, 10%);
+      ;
+    }
+  }
+
+  &.color-primary {
+    background-color: $basic-bg-color;
+    color: #fff;
+
+    &.is-disabled {
+      cursor: not-allowed;
+      background-color: desaturate(lighten($basic-bg-color, 46%), 20%);
+
+      &:hover {
+        background-color: desaturate(lighten($basic-bg-color, 46%), 20%);
+      }
+    }
+
+    &:hover {
+      background-color: #ffd64f;
+      color: #fff;
+    }
+  }
+
+  .icon {
+    margin-left: 0.1em;
+    margin-right: .3em;
+    height: 1.5em;
+    width: 1.5em;
+    user-select: none;
+    cursor: inherit;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+  }
+}
+.content-padding {
+  padding: 0 $content-padding;
+
+  @media (--mobile) {
+    padding: 0 $content-padding-m;
+  }
+}

@@ -4,3 +4,13 @@
   padding:  0 20px;
 }
 $basic-bg-color: #fcc000;
+
+@mixin content-padding($media) {
+  padding: 0 $content-padding-m;
+  @media ($media) {
+      padding-left: $content-padding;
+  }
+}
+
+$content-padding: 20px;
+$content-padding-m: 10px;

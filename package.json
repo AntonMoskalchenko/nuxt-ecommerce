@@ -21,6 +21,8 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-webpack-plugin": "^2.4.2",
     "intersection-observer": "^0.7.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.samplesize": "^4.2.0",
     "node-sass": "^4.13.1",
     "normalize.css": "8.0.1",
     "nuxt": "2.11.0",

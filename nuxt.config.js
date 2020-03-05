@@ -36,10 +36,7 @@ module.exports = {
     './assets/scss/global-styles.scss'
   ],
   plugins: [
-    // { src: '~~/plugins/vue-lazy-hydration' },
-    // { src: '~~/plugins/normal-analytics.js', mode: 'client' },
-    // { src: '~~/plugins/no-ssr-plugins.js', mode: 'client' },
-    // // { src: '~~/plugins/vuetify.js' },
+    { src: '~~/plugins/vue-modal.js', mode: 'client' },
     { src: '~~/plugins/vue-lazy-load.js' }
   ],
   modules: [

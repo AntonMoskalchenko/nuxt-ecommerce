@@ -3,15 +3,20 @@
     <div :class="$style.header">
       <n-link :class="$style.logo" to="/">
         <p>
-          Хвостики
+          Tails
         </p>
       </n-link>
+      <CartButton />
     </div>
   </div>
 </template>
 
 <script>
+import CartButton from '~~/components/header/CartButton'
 export default {
+  components: {
+    CartButton
+  }
 
 }
 </script>
@@ -24,6 +29,8 @@ export default {
 .header {
   @include globalWrapper;
   display: flex;
+  align-items: center;
+    justify-content: space-between;
 }
 .logo {
   font-size: 2.2em;

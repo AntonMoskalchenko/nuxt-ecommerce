@@ -11,21 +11,27 @@
       </div>
       <div :class="$style.topRightBlock">
         <h1>{{ product.pName }}</h1>
-        <p>Цена: {{ product.pPrice }}</p>
+        <p>Price: {{ product.pPrice }}</p>
         <BuyButton :product="product" />
       </div>
     </div>
-    <h2>Описание</h2>
+    <h2>Description</h2>
     <p>{{ product.pDesc }}</p>
+    <h2>Customers also buy</h2>
+    <ProductsList :products="product.alsoBuyProducts" />
+    <h2>Interesting goods</h2>
+    <ProductsList :products="product.interestingProducts" />
   </div>
 </template>
 
 <script>
 import BuyButton from '~~/components/common/BuyButton'
+import ProductsList from '~~/components/common/ProductsList'
 import { mapState } from 'vuex'
 export default {
   components: {
-    BuyButton
+    BuyButton,
+    ProductsList
   },
   async asyncData ({ app, params, route, error }) {
     try {

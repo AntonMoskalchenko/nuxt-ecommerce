@@ -6,6 +6,7 @@
     <div>
       <Breadcrumbs />
       <nuxt />
+      <CastomerCartModal />
     </div>
   </div>
 </template>
@@ -13,11 +14,13 @@
 <script>
 import Header from '~~/components/common/Header.vue'
 import Breadcrumbs from '~~/components/common/Breadcrumbs.vue'
+import CastomerCartModal from '~~/components/modals/CastomerCartModal.vue'
 
 export default {
   components: {
     Header,
-    Breadcrumbs
+    Breadcrumbs,
+    CastomerCartModal
   },
   computed: {
     meta () {
