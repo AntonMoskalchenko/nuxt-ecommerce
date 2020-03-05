@@ -32,7 +32,7 @@
             type="number"
             :min="1"
             :max="1000"
-            @change.prevent="onQuantityChangeHandler($event, product)"
+            @input.prevent="onQuantityChangeHandler($event, product)"
           />
         </div>
         <div>
