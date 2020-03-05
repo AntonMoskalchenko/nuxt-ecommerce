@@ -61,22 +61,35 @@ export default {
 .page {
   @include globalWrapper;
 }
-.image {
-  width: 400px;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover;
-}
+
 .topBlock {
   padding-top: 2em;
   display: flex;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
   .topLeftBlock {
     display: flex;
+
+    .image {
+      width: 400px;
+      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      @media (max-width: 960px) {
+        width: 100%;
+      }
+    }
   }
   .topRightBlock {
     padding-left: 2em;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 960px) {
+      padding-left: 0;
+    }
   }
 }
 </style>

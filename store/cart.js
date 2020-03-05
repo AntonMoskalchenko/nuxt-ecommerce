@@ -3,7 +3,7 @@ const sleep = m => new Promise(r => setTimeout(r, m))
 
 export const state = () => ({
   products: [],
-  version: '0.0.2'
+  version: '0.0.3'
 
 })
 export const mutations = {

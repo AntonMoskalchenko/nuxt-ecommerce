@@ -120,6 +120,7 @@ export const mutations = {
   }
 }
 export const actions = {
+
   async setBreadcrumbs ({ commit }, data) {
     await commit('SET_BREADCRUMBS', data)
   },

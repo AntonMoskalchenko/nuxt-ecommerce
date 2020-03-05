@@ -31,9 +31,11 @@ export default {
 
 .wrapper {
   display: flex;
+  flex-wrap: wrap;
 }
 .block {
 display: flex;
 flex-direction: column;
+margin: 10px 5px;
 }
 </style>
