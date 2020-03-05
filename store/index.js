@@ -138,8 +138,8 @@ export const actions = {
 
     const [products, productsImages] = await Promise.all(
       [
-        await this.$axios.$get('/mock/products.json'),
-        await this.$axios.$get('/mock/products-images.json')
+        this.$axios.$get('/mock/products.json'),
+        this.$axios.$get('/mock/products-images.json')
       ]
     )
     const crubms = getBreadcrumbs('category', route, category)
@@ -152,8 +152,8 @@ export const actions = {
     const productSlug = route.params.ProductSlug
     const [products, productsImages] = await Promise.all(
       [
-        await this.$axios.$get('/mock/products.json'),
-        await this.$axios.$get('/mock/products-images.json')
+        this.$axios.$get('/mock/products.json'),
+        this.$axios.$get('/mock/products-images.json')
       ]
 
     )
