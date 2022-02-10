@@ -23,7 +23,7 @@
     "intersection-observer": "^0.7.0",
     "lodash.debounce": "^4.0.8",
     "lodash.samplesize": "^4.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "normalize.css": "8.0.1",
     "nuxt": "2.11.0",
     "nuxt-trailingslash-module": "1.1.0",
